@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수로 객체만들기</title>
+    <script>
+        var student = new Object(); // 객체를 선언   // ()생성자
+        // 객체 속성에 해당되는 정적 요소 (객체변수)
+        student.name = '거식이';
+        student.age = 27;
+        student.height = 183;
+        // 객체 동적 요소 == Method(사용법) : 모두 return 값이 있어야 하는것은 아니다.
+        student.speech = function () {
+            return '유창하게 말한다.';
+        }
+        student.toString = function () {   // 객체를 표현하는 양식
+            return '이름 : ' + this.name + ', 나이: ' + this.age, +', 키 : ' + this.height;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        document.write('학생이름 : ' + student.name + "<br>");
+        document.write(student.toString() + "<br>");
+    </script>
+</body>
+
+</html>

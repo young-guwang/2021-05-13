@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원하는 위치에 원하는 값을 출력한다.</title>
+    <script>
+        function dispGugudan(form){
+            var dan = form.elements[0].value;
+            $gugudan = "";
+            for(let i = 1; i <= 9; i++){
+                $gugudan += dan + " * " + i + " = " + (dan*i) + "<br>";
+            }
+            document.getElementById("display").innerHTML = $gugudan;
+        }
+    </script>
+</head>
+<body>
+    <div id="display"></div>
+    <form name="myForm">
+        단 입력 : <input type="text" name="dan"/>
+        <button type="button" onclick="dispGugudan(myForm)">구구단 출력</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스(틀)를 만들어 객체(인스턴스) 생성하기</title>
+    <script>
+        function Student(name,age,height,phone){
+            this.name = name;
+            this.age = age;
+            this.height = height;
+            this.phone = phone;
+            this.speech = function(){
+                return '유창하게 말한다.';
+            }
+            this.toString = function(){
+                return this.name + ","+ this.age + "," + this.height + "," + this.phone;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        a = new Student('유관순',18,157,'010-1919-3131');
+        b = new Student('안중근',29,169,'010-1212-3131');
+        // 
+        students = [a,b,new Student('변학도', 54, 175, '010-2222-9999')];
+        for(let i=0; i<students.length; i++){
+            document.write(students[i].toString() + "<br>");
+        }
+        // 3명의 평균 키를 구하시오.
+        sum = 0;
+        for(idx in students){
+            sum += students[idx].height;
+        }
+        avgH = Math.round(sum/students.length*100)/100;
+        document.write("평균키 : " + avgH + "cm <br>");
+        // 말하는 폼세 출력
+        for(idx in students){
+            document.write("유관순은"+ students[idx].speech()+"<br>");
+            document.write("안중근은"+ students[idx].speech()+"<br>");
+            document.write("변학도는"+ students[idx].speech()+"<br>");
+
+        }
+    </script>
+</body>
+</html>
